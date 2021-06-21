@@ -1,3 +1,5 @@
 db.sqlite3
 Veterinary_Management_System/settings.py
+Veterinary_Management_System/__pycache__/settings.cpython-39.pyc
 *.cfg
+*.vscode
