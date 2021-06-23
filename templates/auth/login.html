@@ -1,53 +1,35 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/login.css' %}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Login</title>
-    <link rel="shortcut icon" type="image" href="{% static 'title_logo/title_logo.png' %}">
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-          <img class = "logo" src="{% static 'Images/LOGO.png' %}" alt="BEASTFRIEND LOGO">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link nav-menu_font_size" aria-current="page" href="#">Home</a>
-              <a class="nav-link nav-menu_font_size" href="#">BLOGS</a>
-              <a class="nav-link nav-menu_font_size" href="#">SERVICES</a>
-              <a class="nav-link nav-menu_font_size" href="#" tabindex="-1">APPOINTMENTS</a>
-              <a class="nav-link active nav-menu_font_size" href="#" tabindex="-1">ACCOUNTS</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <hr><br><br><br>
-      <div class="container">
-          <h1 class = "text-center" style = "margin-bottom:20px">Log in</h1>
+ {% extends  '.\base_layout/layout.html' %}
+ {% block content %}
+ <br>
+ <br>
+ <div class="container">
           <div class="container col-lg-4">
-            <form>
+            <form class = "bg-light" style = "border-radius:10px; padding: 20px">
+                <h1 class = "text-center" style = "margin-bottom:20px">Log in</h1>
                 <div class="form-group row" style = "margin-bottom:10px">
-                  <label for="Email" class="col-sm-3 col-form-label text-end">Email : </label>
+                  <label for="Email" class="col-sm-3 col-form-label">Email </label>
                   <div class="col-sm-8">
                     <input type="text" class="form-control" id="Email" value="email@example.com">
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="inputPassword" class="col-sm-3 col-form-label text-end">Password : </label>
+                  <label for="inputPassword" class="col-sm-3 col-form-label">Password </label>
                   <div class="col-sm-8">
                     <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                  </div>
+                </div>
+                <div class="form-group row" style = "margin-top:10px;">
+                  <label for="inputPassword" class="col-sm-3 col-form-label text-end"></label>
+                  <div class="col-sm-8">
+                    <input type="submit" class="btn bg-success form-control" value = "Login">
+                    <a class = "forgot-password" href="">Forgot Password?</a>
+                    <a class = "create-account" href="">Sign Up</a>
                   </div>
                 </div>
             </form>
           </div>
       </div>
-</body>
-</html>
+      <div style = "height:250px">
+
+      </div>
+{% endblock %}

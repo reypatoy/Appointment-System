@@ -11,3 +11,7 @@ def login_view(request):
     # form = AuthenticationForm
 
     return render(request, "auth/login.html", {})
+
+
+def home_view(request):
+    return render(request, "pages/home.html")
