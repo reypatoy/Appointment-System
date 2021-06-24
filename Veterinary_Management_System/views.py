@@ -15,3 +15,7 @@ def login_view(request):
 
 def home_view(request):
     return render(request, "pages/home.html")
+
+
+def appointment_view(request):
+    return render(request, 'pages/appointment.html')
