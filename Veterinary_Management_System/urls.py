@@ -13,7 +13,9 @@ urlpatterns = [
     # home
     path('home', home_view, name='home_view'),
     # appointment
-    path('appointments', appointment_view, name='appointment_view')
+    path('appointments', appointment_view, name='appointment_view'),
+    # crm
+    path('crm/', include('crm.urls', namespace='crm'))
 
 ]
 

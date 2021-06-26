@@ -17,19 +17,33 @@ def login_view(request):
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
 
-        user = authenticate(username=username, password=password)
+            user = authenticate(username=username, password=password)
 
-        if user is not None:
-            login(request, user)
+            if user is not None:
+                login(request, user)
 
-            if request.GET.get('next'):
-                return redirect(request.GET.get('next'))
+                if request.GET.get('next'):
+                    return redirect(request.GET.get('next'))
 
-            else:
-                if user.user_type == 1:
-                    return redirect('crm:admin_dashboard.html')
+                else:
+                    if user.user_type == 1:
+                        return redirect('crm:admin_dashboard_view')
 
-    return render(request, "auth/login.html", {})
+                    if user.user_type == 2:
+                        pass
+
+                    if user.user_type == 3:
+                        pass
+
+        else:
+            error_message = form.errors
+
+    context = {
+        'form': form,
+        'error_message': error_message
+    }
+
+    return render(request, "auth/login.html", context)
 
 
 def home_view(request):
